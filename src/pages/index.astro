@@ -1,17 +1,18 @@
 ---
-import AboutMe from "@/components/AboutMe.astro"
-import Badge from "@/components/Badge.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import GitHubIcon from "@/components/icons/GitHub.astro"
-import Layout from "@/layouts/Layout.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import SocialPill from "@/components/SocialPill.astro"
+import Layout from "@/layouts/Layout.astro";
+
+import AboutMe from "@/components/AboutMe.astro";
+import Badge from "@/components/Badge.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <Layout
@@ -20,21 +21,15 @@ import SocialPill from "@/components/SocialPill.astro"
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32">
-      <img
-        class="rounded-full size-12 mb-4"
-        src=""
-        alt="ricardo photo"
-      />
-      <h1
-        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-      Ricardo <a
+      <img class="rounded-full size-12 mb-4" src="developer.png" alt="ricardo photo" />
+      <h1 class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        Hola, soy Ricardo Bebeto<a
           href="https://linkedin.com/in/"
           target="_blank"
           rel="noopener"
           class="flex justify-center items-center hover:scale-105 transition"
         >
-          <!-- <Badge>Disponible para trabajar</Badge> -->
+          <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
       <h2
@@ -43,18 +38,16 @@ import SocialPill from "@/components/SocialPill.astro"
         <span>+4 años de experiencia.</span><span
           class="text-yellow-800 dark:text-yellow-200"
         >
-          Desarrollador Web </span
-        >
-        .<span class="text-red-800 dark:text-red-200">
-          De México</span
-        >.
+          Desarrollador Web
+        </span>
+        .<span class="text-red-800 dark:text-red-200"> De México</span>.
         <span class="text-sky-800 dark:text-sky-200"
           >Especializado en crear aplicaciones web.</span
         >
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <!-- <SocialPill href="https://linkedin.com/in/">
+        <SocialPill href="https://linkedin.com/in/">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
@@ -65,7 +58,7 @@ import SocialPill from "@/components/SocialPill.astro"
         <SocialPill href="mailto:test@mail.com">
           <MailIcon class="size-4 md:size-6" />
           test@gmail.com
-        </SocialPill> -->
+        </SocialPill>
       </nav>
     </SectionContainer>
 
@@ -73,30 +66,30 @@ import SocialPill from "@/components/SocialPill.astro"
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
-        <!-- <Briefcase class="size-7" /> -->
+        <Briefcase class="size-7" />
         Experiencia laboral
       </h2>
-     <!--  <Experience /> -->
+       <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
-       <!--  <CodeIcon class="size-7" /> -->
+         <CodeIcon class="size-7" />
         Proyectos
       </h2>
-      <!-- <Projects /> -->
+      <Projects />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
-        <!-- <ProfileCheck class="size-7" /> -->
+        <ProfileCheck class="size-7" />
         Sobre mi
       </h2>
-      <!-- <AboutMe /> -->
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
