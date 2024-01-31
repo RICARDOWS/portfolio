@@ -11,55 +11,71 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import ProfileCheck from "@/components/icons/ProfileCheck.astro";
 import Projects from "@/components/Projects.astro";
+import PuzzleIcon from "@/components/icons/Puzzle.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import SocialPill from "@/components/SocialPill.astro";
+import LinkedIn from "@/components/icons/LinkedIn.astro";
+
+const personalImageAlt = "ricardo bebeto photo";
+
+const socials = {
+  linkedIn: "https://linkedin.com/in/ricardo-bebeto-developer",
+  github: "https://github.com/ricardows",
+  email: "info@ricardobebeto.me",
+};
 ---
 
 <Layout
-  title="Portafolio de Ricardo Bebeto"
-  description="Desarrollador y programador"
+  title="Portafolio de Ricardo Bebeto - Desarrollador y Programador web"
+  description="Especializado en crear librerias y aplicaciones web."
 >
   <main class="px-4">
+
     <!-- Main -->
-    <SectionContainer class="py-44 pb-32">
-      <img class="rounded-full size-12 mb-4" src="developer.png" alt="ricardo photo" />
-      <h1 class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-        Hola, soy Ricardo Bebeto<a
-          href="https://linkedin.com/in/"
+    <SectionContainer class="py-16 md:py-36">
+      <div class="flex gap-4 mb-4">
+        <img
+          class="rounded-full shadow-lg size-12"
+          src="developer.png"
+          alt={personalImageAlt}
+        />
+        <a
+          href={socials.linkedIn}
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center hover:scale-105 transition"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
+      </div>
+
+      <h1
+        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
       >
-        <span>+4 años de experiencia.</span><span
-          class="text-yellow-800 dark:text-yellow-200"
-        >
-          Desarrollador Web
-        </span>
-        .<span class="text-red-800 dark:text-red-200"> De México</span>.
-        <span class="text-sky-800 dark:text-sky-200"
-          >Especializado en crear aplicaciones web.</span
-        >
-      </h2>
+        Hola, soy Ricardo Bebeto
+      </h1>
+
+      <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+      >
+        Desarrollador web con más de <strong>4 años</strong> de experiencia. De B.C.S. México. 🇲🇽 
+        Especializado en el <strong>diseño y desarrollo de sistemas y aplicaciones web</strong> para empresas, 
+        destacándome por la creación de soluciones eficientes y adaptadas a las necesidades del cliente.
+      </p>
 
       <!-- Socials -->
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/ricardo-bebeto-developer">
+        <SocialPill href={socials.linkedIn}>
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
-        <SocialPill href="https://github.com/ricardows">
+        <SocialPill href={socials.github}>
           <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="mailto:test@mail.com">
+        <SocialPill href={"mailto:" + socials.email}>
           <MailIcon class="size-4 md:size-6" />
-          test@gmail.com
+          {socials.email}
         </SocialPill>
       </nav>
     </SectionContainer>
@@ -67,12 +83,12 @@ import SocialPill from "@/components/SocialPill.astro";
     <!-- Experience -->
     <SectionContainer id="experiencia">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
-        <Briefcase class="size-7" />
+        <Briefcase class="size-8" />
         Experiencia laboral
       </h2>
-       <Experience />
+      <Experience />
     </SectionContainer>
 
     <!-- AboutMe -->
@@ -89,12 +105,13 @@ import SocialPill from "@/components/SocialPill.astro";
     <!-- Projects -->
     <SectionContainer id="proyectos">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
-         <CodeIcon class="size-7" />
+        <PuzzleIcon class="size-7" />
         Proyectos
       </h2>
-      <Projects />
+      Proximamente...
+      <!-- <Projects /> -->
     </SectionContainer>
   </main>
 </Layout>

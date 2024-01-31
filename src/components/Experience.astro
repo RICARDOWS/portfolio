@@ -2,22 +2,39 @@
 import ExperienceItem from "./ExperienceItem.astro"
 const EXPERIENCIE = [
   {
-    date: "Actualmente...",
-    title: "Programador",
-    description:
-      "Programacion",
-    link: "https://google.com.mx",
+    date: "Octubre 2022 - Octubre 2023",
+    title: "Programador Full-Stack",
+    company: "Transcabo",
+    description: "Programación web",
+    link: "",
   },
   {
-    date: "Fecha test",
+    date: "Noviembre 2019 - Septiembre 2022",
     title: "Programador",
-    description:
-      "Descripcion test",
+    company: "IT Foundry",
+    description: "Programación web",
+    link: "",
   },
+  {
+    date: "Febrero 2019 - Julio 2019",
+    title: "Residente",
+    company: "Corporativo Gaviotas S.A de C.V.",
+    description: "Programación web",
+    link: "",
+  }, 
+  /* 
+  {
+    date: "",
+    title: "",
+    company: "",
+    description: "",
+    link: "",
+  }, 
+  */
 ]
 ---
 
-<ol class="relative border-s border-gray-200 ml-3">
+<ol class="relative mt-16">
   {
     EXPERIENCIE.map((experiencie) => (
       <li class="mb-10 ms-4">
