@@ -20,6 +20,7 @@ import SocialPill from "@/components/SocialPill.astro";
   description="Desarrollador y programador"
 >
   <main class="px-4">
+    <!-- Main -->
     <SectionContainer class="py-44 pb-32">
       <img class="rounded-full size-12 mb-4" src="developer.png" alt="ricardo photo" />
       <h1 class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
@@ -46,8 +47,9 @@ import SocialPill from "@/components/SocialPill.astro";
         >
       </h2>
 
+      <!-- Socials -->
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/">
+        <SocialPill href="https://linkedin.com/in/ricardo-bebeto-developer">
           <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
@@ -62,6 +64,7 @@ import SocialPill from "@/components/SocialPill.astro";
       </nav>
     </SectionContainer>
 
+    <!-- Experience -->
     <SectionContainer id="experiencia">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
@@ -72,16 +75,7 @@ import SocialPill from "@/components/SocialPill.astro";
        <Experience />
     </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-      >
-         <CodeIcon class="size-7" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
-
+    <!-- AboutMe -->
     <SectionContainer id="sobre-mi">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
@@ -90,6 +84,17 @@ import SocialPill from "@/components/SocialPill.astro";
         Sobre mi
       </h2>
       <AboutMe />
+    </SectionContainer>
+
+    <!-- Projects -->
+    <SectionContainer id="proyectos">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+         <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>
