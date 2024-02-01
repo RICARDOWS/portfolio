@@ -10,7 +10,13 @@
         Deny from all
     </FilesMatch>
 
-    # Permitir la lectura
+    # Permitir la lectura y escritura en la carpeta 'dist'
+    <FilesMatch "^dist\/.*$">
+        Order Allow,Deny
+        Allow from all
+    </FilesMatch>
+
+    # Permitir la lectura en otros archivos y carpetas
     <Files "*">
         Order Allow,Deny
         Allow from all
