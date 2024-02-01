@@ -19,7 +19,6 @@
     #    Order Allow,Deny
     #    Allow from all
     #</Files>
-
     RewriteEngine on
     RewriteCond %{HTTP_HOST} ^ricardobebeto.me$ [NC,OR]
     RewriteCond %{HTTP_HOST} ^www.ricardobebeto.me$
