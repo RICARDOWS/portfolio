@@ -1,5 +1,7 @@
+<IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^ricardobebeto.me$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.ricardobebeto.me$
 RewriteCond %{REQUEST_URI} !dist/
 RewriteRule (.*) dist/$1 [L]
+</IfModule>
