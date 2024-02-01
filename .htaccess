@@ -1,5 +1,16 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
+
+# Deshabilitar la visualización de directorios
+Options -Indexes
+
+# Bloquear el acceso a todos los archivos y carpetas, excepto a la carpeta 'dist'
+<FilesMatch "^(?!dist\/).*$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+RewriteEngine on
 RewriteCond %{HTTP_HOST} ^ricardobebeto.me$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.ricardobebeto.me$
 RewriteCond %{REQUEST_URI} !dist/
