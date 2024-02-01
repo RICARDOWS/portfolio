@@ -1,24 +1,4 @@
 <IfModule mod_rewrite.c>
-    # Deshabilitar la visualización de directorios
-    #Options -Indexes
-
-    # Denegar la escritura a todos los archivos y carpetas, excepto a la carpeta 'dist'
-    #<FilesMatch "^(?!dist\/).*$">
-    #    Order Allow,Deny
-    #    Deny from all
-    #</FilesMatch>
-
-    # Permitir la lectura y escritura en la carpeta 'dist'
-    #<FilesMatch "^dist\/.*$">
-    #    Order Allow,Deny
-    #    Allow from all
-    #</FilesMatch>
-
-    # Permitir la lectura en otros archivos y carpetas
-    #<Files "*">
-    #    Order Allow,Deny
-    #    Allow from all
-    #</Files>
     RewriteEngine on
     RewriteCond %{HTTP_HOST} ^ricardobebeto.me$ [NC,OR]
     RewriteCond %{HTTP_HOST} ^www.ricardobebeto.me$
