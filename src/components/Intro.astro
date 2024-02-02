@@ -1,0 +1,85 @@
+---
+import Badge from "@/components/Badge.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+
+
+const personalImageAlt = "ricardo bebeto photo";
+
+const socials = {
+  linkedIn: "https://linkedin.com/in/ricardo-bebeto-developer",
+  github: "https://github.com/ricardows",
+  email: "info@ricardobebeto.me",
+};
+---
+<article>
+<div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-12"
+      src="logo_blanco.svg"
+      alt={personalImageAlt}
+    />
+    <a
+      href={socials.linkedIn}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+</div>
+
+<h1
+class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+>
+Hola, soy Ricardo Bebeto
+</h1>
+
+<section class="grid grid-cols md:grid-cols-2 gap-2">
+<div>
+    <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+    Desarrollador web con más de <strong>4 años</strong> de experiencia. De B.C.S. México. 🇲🇽 
+    Especializado en el <strong>diseño y desarrollo de sistemas y aplicaciones web</strong> para empresas, 
+    destacándome por la creación de soluciones eficientes y adaptadas a las necesidades del cliente.
+    </p>
+</div>
+
+<div class="bg-sky-700/10 shadow-sm shadow-sky-500/30 rounded-2xl h-36 w-60 md:self-center justify-self-center mt-8 md:mt-0">
+    <div class="group overflow-hidden relative 
+    bg-neutral-900 rounded-2xl outline outline-violet-400 -outline-offset-8
+    after:duration-500 before:duration-500 duration-500 
+    hover:after:duration-500 hover:after:translate-x-24 
+    hover:before:translate-y-12 hover:before:-translate-x-32 
+    hover:duration-500 after:absolute after:w-24 after:h-24 
+    after:bg-sky-700 after:rounded-full after:blur-xl after:bottom-32 after:right-16 before:absolute before:w-20 before:h-20
+    before:bg-sky-400 before:rounded-full before:blur-xl before:top-20 before:right-16 hover:rotate-12
+    flex justify-center items-center h-36 w-60 origin-bottom-right
+    ">
+        <div class="z-10 flex flex-col items-center gap-2">
+        <span class="text-slate-300 text-3xl font-bold">Full Stack </span>
+        <p class="text-gray-50 text-xl">Developer</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Socials -->
+<nav class="flex gap-4 mt-8 flex-wrap">
+<SocialPill href={socials.linkedIn}>
+    <LinkedInIcon class="size-4 md:size-6" />
+    LinkedIn
+</SocialPill>
+<SocialPill href={socials.github}>
+    <GitHubIcon class="size-4 md:size-6" />
+    GitHub
+</SocialPill>
+<SocialPill href={"mailto:" + socials.email}>
+    <MailIcon class="size-4 md:size-6" />
+    {socials.email}
+</SocialPill>
+</nav>
+</article>
