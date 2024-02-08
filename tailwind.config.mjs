@@ -1,8 +1,51 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {},
-	},
-	plugins: [],
-}
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      colors: {
+		darkbluex: "#061a40",
+		lightbluex: "#e7ecef",
+		violet1: '#2c0735',
+		violet2: "#4e148c",
+		violet3: "#613dc1",
+		violet4: "#858ae3",
+		violet5: "#97dffc",
+		blue1: "#1d3461",
+		blue2: "#1f487e",
+		blue3: "#376996",
+		blue4: "#6290c8",
+		blue5: "#829cbc",
+		yellow1: "#f1a208",
+		yellow2: "#d5c67a",
+        mainpurple: {
+          50: "#E9DEF7",
+          100: "#D4BCF0",
+          200: "#AB7EE2",
+          300: "#803BD3",
+          400: "#5B249E",
+          500: "#35155D",
+          600: "#2B114B",
+          700: "#1F0C36",
+          800: "#150825",
+          900: "#0A0411",
+          950: "#050208",
+        },
+		mainblue: {
+			50: "#EBF0FA",
+			100: "#DBE4F5",
+			200: "#B2C7EB",
+			300: "#8EACE1",
+			400: "#6992D8",
+			500: "#4477CE",
+			600: "#2E5DAE",
+			700: "#224581",
+			800: "#162D55",
+			900: "#0C182C",
+			950: "#050B14"
+		},
+      },
+    },
+  },
+  plugins: [],
+};
