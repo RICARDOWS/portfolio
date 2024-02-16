@@ -6,6 +6,8 @@ export default {
       colors: {
 		darkbluex: "#061a40",
 		lightbluex: "#e7ecef",
+		lighttext: "#630360",
+		darktext: "#F7A708",
 		violet1: '#2c0735',
 		violet2: "#4e148c",
 		violet3: "#613dc1",

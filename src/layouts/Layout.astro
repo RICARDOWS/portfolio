@@ -22,6 +22,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/logo_blanco.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- <link rel="canonical" href="https://example.com/dresses/green-dresses" /> -->
     <ViewTransitions />
   </head>
 
@@ -39,7 +40,9 @@ const { title, description } = Astro.props;
     </div>
     
     <Header />
+    <main>
       <slot />
+    </main>
     <Footer />
 
   </body>

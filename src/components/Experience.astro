@@ -1,6 +1,6 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+const experienceArray = [
   {
     date: "Octubre 2022 - Octubre 2023",
     title: "Programador Full-Stack",
@@ -36,7 +36,7 @@ const EXPERIENCIE = [
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    experienceArray.map((experiencie) => (
       <li class="mb-10 ms-4">
         <ExperienceItem {...experiencie} />
       </li>
