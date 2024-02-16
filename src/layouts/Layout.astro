@@ -127,11 +127,11 @@ const { title, description } = Astro.props;
     }
 
     .link-active {
-      @apply bg-white/40 font-semibold dark:bg-white/15 shadow-lg shadow-white/20 backdrop-blur-2xl;
+      @apply bg-white/40 dark:bg-white/15 font-semibold shadow-lg shadow-white/20 backdrop-blur-2xl;
     }
 
     .link-hover-effect {
-      @apply relative w-fit  after:block after:content-[''] after:absolute after:h-[3px] after:bg-yellow-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left
+      @apply relative w-fit  after:block after:content-[''] after:absolute after:h-[3px] after:bg-lighttext dark:after:bg-darktext after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left
     }
 
     .background-pattern{ 
