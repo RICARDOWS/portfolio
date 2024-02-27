@@ -8,83 +8,172 @@ import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
   description: string;
+  canonical?: string;
+  image?: string;
+  index?: boolean;
+  follow?: boolean;
+  icon?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = "/logo.svg",
+  icon = "/logo_blanco.svg",
+  index = true,
+  follow = true,
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" >
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo_blanco.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href={icon} />
+    <link rel="canonical" href={canonical} />
     <title>{title}</title>
-    <!-- <link rel="canonical" href="https://example.com/dresses/green-dresses" /> -->
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preload" as="image" href={image} />
+    <meta
+      name="keywords"
+      content="developer, fullstack, ricardo jimenez, B.C.S."
+    />
+
+    <!--Twitter Card Metadata-->
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@" />
+      <meta name="twitter:creator" content="@" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={`${Astro.url.origin}${image}`} /> -->
+
+    <!--Open Graph Metadata-->
+    <meta name="og:image" content={`${Astro.url.origin}${image}`} />
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    <meta name="og:url" content={Astro.url.href} />
+    <meta name="og:site_name" content={title} />
+    <meta name="og:type" content="website" />
+    <meta name="og:locale" content="es_ES" />
+    <meta
+      name="robots"
+      content={`${index ? "index" : "noindex"}, ${follow ? "follow" : "nofollow"}, max-image-preview:large, max-snippet:-1, max-video-preview:-1`}
+    />
+    <meta
+      name="googlebot"
+      content={`${index ? "index" : "noindex"}, ${follow ? "follow" : "nofollow"}`}
+    />
     <ViewTransitions />
   </head>
 
-  <body class="text-black dark:text-white">
+  <body class="text-primary [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary">
+
+    <!-- background -->
     <div class="fixed left-0 top-0 -z-10 h-full w-full">
-      <div class="relative h-full w-full bg-lightbluex dark:bg-gray-950">
-        <div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full 
+      <div class="relative h-full w-full bg-secondary">
+        <div
+          class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full
         bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.35),rgba(255,255,255,0))]
-        dark:bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.15),rgba(255,255,255,0))]
-        "></div>
-        <div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full 
+        dark:bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.15),rgba(255,255,255,0))]"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full
         bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.35),rgba(255,255,255,0))]
-        dark:bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.15),rgba(255,255,255,0))]"></div>
+        dark:bg-[radial-gradient(circle_farthest-side,rgba(144,19,254,.15),rgba(255,255,255,0))]"
+        >
+        </div>
       </div>
     </div>
-    
+
     <Header />
-    <main>
+    <div>
       <slot />
-    </main>
+    </div>
     <Footer />
 
-  </body>
-  
-  <style is:global>
-    :root {
-      color-scheme: light dark;
-    }
-
-    html {
-      font-family: "Onest Variable", system-ui, sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      color: rgba(17, 17, 17, 0.9);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overscroll-behavior: none;
-    }
     
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
+  </body>
+</html>
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        color: rgba(255, 255, 255, 0.9);
-      }
-    }
+<style is:global>
+  :root {
+		--color-primary: #030712;
+		--color-secondary: #e7ecef;
+    --color-tertiary: #630360;
+    --color-underline: #630360;
+	}
 
-    #header-nav {
-      animation: blur linear both 0.5s;
-      animation-timeline: scroll();
-      animation-range: 0 500px;
-    }
+	.dark {
+		--color-primary: #e7ecef;
+		--color-secondary: #030712;
+    --color-tertiary: #F7A708;
+    --color-underline: #F7A708;
+	}
 
+  html {
+    font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
+		overflow-x: hidden;
+		overscroll-behavior: none;
+  }
+
+  body {
+    color: rgba(17, 17, 17, 0.9);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overscroll-behavior: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  #header-nav {
+    animation: blur linear both 0.5s;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur {
+    to {
+      backdrop-filter: blur(20px);
+      border-width: 1px;
+      border-color: rgba(0, 0, 0);
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: rgb(229, 229, 229);
+      border-radius: 9999px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
     @keyframes blur {
+      from {
+        border: 0px;
+      }
       to {
+        box-shadow:
+          0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+          0px 0px 0 1px rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(20px);
         border-width: 1px;
         border-color: rgba(0, 0, 0);
@@ -95,62 +184,34 @@ const { title, description } = Astro.props;
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: rgb(229, 229, 229);
+        background-color: rgba(0, 0, 0, 0.3);
         border-radius: 9999px;
       }
     }
+  }
 
-    @media (prefers-color-scheme: dark) {
-      @keyframes blur {
-        from {
-          border: 0px;
-        }
-        to {
-          box-shadow:
-            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-            0px 0px 0 1px rgba(0, 0, 0, 0.3);
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(20px);
-          border-width: 1px;
-          border-color: rgba(0, 0, 0);
-          padding-left: 0.75rem;
-          padding-right: 0.75rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          background-color: rgba(0, 0, 0, 0.3);
-          border-radius: 9999px;
-        }
-      }
-    }
+  .link-active {
+    @apply bg-white/40 dark:bg-white/15 font-semibold shadow-lg shadow-white/20 backdrop-blur-2xl;
+  }
 
-    .link-active {
-      @apply bg-white/40 dark:bg-white/15 font-semibold shadow-lg shadow-white/20 backdrop-blur-2xl;
-    }
+  .link-hover-effect {
+    @apply relative w-fit  after:block after:content-[''] after:absolute after:h-[3px] after:bg-colorUnderline after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
+  }
 
-    .link-hover-effect {
-      @apply relative w-fit  after:block after:content-[''] after:absolute after:h-[3px] after:bg-lighttext dark:after:bg-darktext after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left
-    }
+  .background-pattern {
+    height: 100vh;
+    width: 100vw;
 
-    .background-pattern{ 
-      height: 100vh;
-      width: 100vw;
+    background-image: radial-gradient(
+      rgba(2255, 255, 255, 0.1) 9%,
+      transparent: 9%
+    );
 
-      background-image: radial-gradient(
-        rgba(2255, 255, 255, 0.1) 9%,
-        transparent: 9%
-      );
-
-      background-position: 0% 0%;
-      background-size: 12vmin 12vmin;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      z-index: 2;
-    }
-
-    
-  </style>
-</html>
+    background-position: 0% 0%;
+    background-size: 12vmin 12vmin;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+  }
+</style>

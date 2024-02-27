@@ -1,5 +1,6 @@
 ---
-import ThemeIcon from './ThemeIcon.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
 const navItems = [
   {
     title: "Experiencia",
@@ -78,7 +79,7 @@ const navItems = [
           <div
             class="flex items-center border-l border-slate-600 ml-4 pl-4 dark:border-slate-400"
           >
-          <ThemeIcon />
+          <ThemeToggle />
           </div>
         </div>
 
@@ -113,7 +114,7 @@ const navItems = [
               navItems.map((link) => (
                 <li><a
                   
-                  class="flex py-2 hover:text-lighttext dark:hover:text-darktext"
+                  class="flex py-2 hover:text-tertiary"
                   
                   href={link.url}
                 >
@@ -122,7 +123,7 @@ const navItems = [
               ))
             }     
           </ul>
-          <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-200/10">
+          <div class="mt-4 pt- border-t border-slate-200 dark:border-slate-200/10">
             <div class="flex items-center justify-between">
               <!-- <label for="theme" class="text-slate-700 font-normal dark:text-slate-400">Tema</label>
               <div class="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2
@@ -150,11 +151,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-lighttext");
-              item.classList.add("dark:text-darktext");
-            } else {/* text-lighttext dark:text-darktext */
-              item.classList.remove("text-lighttext");
-              item.classList.remove("dark:text-darktext");
+              item.classList.add("text-tertiary");
+            } else {
+              item.classList.remove("text-tertiary");
             }
           });
         }
