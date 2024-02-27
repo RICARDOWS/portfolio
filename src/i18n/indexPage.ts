@@ -1,7 +1,7 @@
 export const LANDING_PAGE = {
     es: {
       'meta.description': '',
-      'meta.title': "",
+      'meta.title': "Portafolio de Ricardo Bebeto - Full Stack Developer",
       'meta.keywords': "",
       'meta.og:image': '',
       'meta.og:site_name': "" ,
@@ -14,7 +14,7 @@ export const LANDING_PAGE = {
     },
     en: {
       'meta.description': '',
-      'meta.title': "",
+      'meta.title': "Ricardo Bebeto Portfolio - Full Stack Developer",
       'meta.keywords': "",
       'meta.og:image': '',
       'meta.og:site_name': "" ,
