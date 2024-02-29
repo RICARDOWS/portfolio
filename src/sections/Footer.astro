@@ -1,6 +1,24 @@
 ---
 
 const currentYear = new Date().getFullYear();
+
+const footItems = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Habilidades",
+    label: "habilidades",
+    url: "/#habilidades",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
+]
 ---
 
 <footer class="bg-black/5  backdrop-blur-lg w-full mx-auto mt-10 lg:border-t lg:border-slate-300/10">
@@ -21,30 +39,17 @@ const currentYear = new Date().getFullYear();
        <div class="w-1/2 px-4">
           <div class="w-full flex justify-end">
              <ul class="my-auto">
+              {footItems.map((item)=> (
                 <li>
                    <a
-                      href="/#experiencia"
+                      href={item.url}
                       class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6  link-hover-effect"
                       >
-                   Experiencia
+                   {item.title}
                    </a>
                 </li>
-                <li>
-                   <a
-                      href="/#sobre-mi"
-                      class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6 link-hover-effect"
-                      >
-                   Sobre Mi
-                   </a>
-                </li>
-                <li>
-                   <a
-                      href="/#proyectos"
-                      class="inline-block text-base leading-loose text-body-color hover:text-primary dark:text-dark-6 link-hover-effect"
-                      >
-                   Proyectos
-                   </a>
-                </li>
+              ))}
+                
              </ul>
           </div>
        </div>

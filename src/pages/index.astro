@@ -1,13 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro";
-import Briefcase from "@/components/icons/Briefcase.astro";
-import Experience from "@/components/Experience.astro";
-import Main from "@/components/Main.astro";
-import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import AboutMe from "@/sections/AboutMe.astro";
+import BriefcaseIcon from "@/components/icons/Briefcase.astro";
+import KeyboardIcon from "@/components/icons/Keyboard.astro"
+import Experience from "@/sections/Experience.astro";
+import Main from "@/sections/Main.astro";
+import ProfileCheckIcon from "@/components/icons/ProfileCheck.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
-
+import Skills from "@/sections/Skills.astro";
 ---
 <Layout
   title= "Portafolio de Ricardo Bebeto - Full Stack Developer"
@@ -23,16 +24,34 @@ import SectionContainer from "@/components/SectionContainer.astro";
     <!-- Experience -->
     <SectionContainer id="experiencia" class="md:mb-20">
       <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white" >
-        <Briefcase class="size-8" />
+        <BriefcaseIcon class="size-8" />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
+    <!-- Skills -->
+    <SectionContainer id="habilidades" class="mb-6 md:mb-20">
+      <div class=" py-2">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <!-- text - start -->
+          <div class="">
+            <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white" >
+              <KeyboardIcon class="size-8" />
+              Habilidades
+            </h2>
+          </div>
+          <!-- text - end -->
+          <Skills/>
+        </div>
+      </div>
+    </SectionContainer>
+
+
     <!-- AboutMe -->
     <SectionContainer id="sobre-mi" class="md:mb-20">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80" >
-        <ProfileCheck class="size-7" />
+        <ProfileCheckIcon class="size-7" />
         Sobre mi
       </h2>
       <AboutMe />

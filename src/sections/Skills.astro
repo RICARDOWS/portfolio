@@ -1,0 +1,109 @@
+---
+import CheckIcon from "@/components/icons/Check.astro";
+
+const skills = {
+  backend: [
+    { name: "Express.js", favorite: false, learning: false },
+    { name: "Java", favorite: false, learning: false },
+    { name: "Laravel", favorite: false, learning: false },
+    { name: "Node.js", favorite: false, learning: false },
+    { name: "PHP", favorite: false, learning: false },
+    { name: "WordPress", favorite: false, learning: false }
+  ],
+  frontend: [
+    { name: "Astro.js", favorite: false, learning: false },
+    { name: "CSS", favorite: false, learning: false },
+    { name: "HTML", favorite: false, learning: false },
+    { name: "JavaScript", favorite: false, learning: false },
+    { name: "jQuery", favorite: false, learning: false },
+    { name: "React", favorite: false, learning: false },
+    { name: "Tailwind CSS", favorite: false, learning: false },
+    { name: "Vue.js", favorite: false, learning: false }
+  ],
+  database: [
+    { name: "MySQL", favorite: false, learning: false },
+    { name: "PostgreSQL", favorite: false, learning: false }
+  ],
+  others: [
+    { name: "Composer", favorite: false, learning: false },
+    { name: "Docker", favorite: false, learning: false },
+    { name: "Git", favorite: false, learning: false },
+    { name: "Jira", favorite: false, learning: false },
+    { name: "Npm", favorite: false, learning: false }
+  ]
+};
+---
+
+<div class="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-2">
+  <!-- feature - start -->
+  <div class="flex flex-col rounded-lg border border-primary p-4 md:p-6">
+    <h3 class="mb-2 text-lg font-semibold md:text-xl">Backend</h3>
+    <ul class="space-y-2">
+      {
+        skills.backend.map((item) => (
+          <li class="text-body-color dark:text-dark-6 flex text-sm">
+            <span class="text-primary mr-2.5 mt-0.5">
+              <CheckIcon />
+            </span>
+            {item.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- feature - end -->
+
+  <!-- feature - start -->
+  <div class="flex flex-col rounded-lg border border-primary p-4 md:p-6">
+    <h3 class="mb-2 text-lg font-semibold md:text-xl">Frontend</h3>
+    <ul class="space-y-2">
+      {
+        skills.frontend.map((item) => (
+          <li class="text-body-color dark:text-dark-6 flex text-sm">
+            <span class="text-primary mr-2.5 mt-0.5">
+              <CheckIcon />
+            </span>
+            {item.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- feature - end -->
+
+  <!-- feature - start -->
+  <div class="flex flex-col rounded-lg border border-primary p-4 md:p-6">
+    <h3 class="mb-2 text-lg font-semibold md:text-xl">Database</h3>
+    <ul class="space-y-2">
+      {
+        skills.database.map((item) => (
+          <li class="text-body-color dark:text-dark-6 flex text-sm">
+            <span class="text-primary mr-2.5 mt-0.5">
+              <CheckIcon />
+            </span>
+            {item.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- feature - end -->
+
+  <!-- feature - start -->
+  <div class="flex flex-col rounded-lg border border-primary p-4 md:p-6">
+    <h3 class="mb-2 text-lg font-semibold md:text-xl">Otros</h3>
+    <ul class="space-y-2">
+      {
+        skills.others.map((item) => (
+          <li class="text-body-color dark:text-dark-6 flex text-sm">
+            <span class="text-primary mr-2.5 mt-0.5">
+              <CheckIcon />
+            </span>
+            {item.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- feature - end -->
+</div>
